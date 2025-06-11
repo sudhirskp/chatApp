@@ -23,6 +23,18 @@ This is an anonymous chat application built using Java. The project allows users
 
 ## Getting Started
 
+## Technology Stack
+
+### Backend
+
+- **Spring Boot (Java):** Main framework for REST API and application logic.
+- **MongoDB:** Database for storing chat rooms and messages.
+- **WebSocket (STOMP over SockJS):** For real-time messaging features.
+
+### Frontend
+
+- **Coming Soon**
+
 ### Prerequisites
 
 - Java (version 8 or above)
