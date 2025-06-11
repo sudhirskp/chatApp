@@ -7,7 +7,7 @@ Currently Ongoing ...
 ![room-join](room join.png)
 
 ## Chat-Page
-![Chat-apge](chat page.png)
+![Chat-apge](chat_page.png)
 
 ## Database
 ![data-Base](chatApp database.png)
