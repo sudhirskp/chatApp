@@ -1,13 +1,16 @@
 # chatApp
 
-# Note : 
+## Note : 
 Frontend Code Updating Soon !!!
 Currently Ongoing ...
-# Create and Join the Room
+## Create and Join the Room
+![room-join](room join.png)
 
-# Chat-Page
+## Chat-Page
+![Chat-apge](chat page.png)
 
-
+## Database
+![data-Base](chatApp database.png)
 
 Anonymouse Chat App
 
