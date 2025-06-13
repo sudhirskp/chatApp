@@ -13,6 +13,7 @@ import spring.chat.app.chatapp.entities.Room;
 public interface RepoRoom extends MongoRepository<Room, String> {
 
     Room findByRoomId(String roomId);
+
 }
 
 
