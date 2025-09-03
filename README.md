@@ -3,7 +3,7 @@
 A real-time chat application built using **Spring Boot** and **MongoDB**. This application allows users to create, join, leave, and close chat rooms, as well as send and retrieve messages.
 
 ## Note : 
-Frontend Code : frontend
+Frontend Code : frontend ||
 Backend Code : chatApp
 ## Create and Join the Room
 ![room-join](room_join.png)
