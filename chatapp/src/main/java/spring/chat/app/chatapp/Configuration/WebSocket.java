@@ -1,5 +1,6 @@
 package spring.chat.app.chatapp.Configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -10,11 +11,13 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocket implements WebSocketMessageBrokerConfigurer {
 
-    @Override
-    public void registerStompEndpoints(StompEndpointRegistry registry){
+    @Value("${allowed.origins:https://courageous-cheesecake-916884.netlify.app/}")
+    private String[] allowedOrigins;
 
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat")
-                .setAllowedOrigins("http://localhost:5173")
+                .setAllowedOriginPatterns(allowedOrigins)  // Changed to setAllowedOriginPatterns
                 .withSockJS();
     }
 
