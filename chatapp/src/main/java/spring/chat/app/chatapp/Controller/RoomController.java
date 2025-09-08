@@ -107,17 +107,7 @@ public class RoomController {
 
 
 
-    //creater info
 
-//    private RoomService roomService;
-//        @GetMapping("/{roomId}/creator")
-//        public ResponseEntity<Map<String, Boolean>> isRoomCreator(
-//                @PathVariable String roomId,
-//                @RequestParam String username
-//        ) {
-//            boolean isCreator = roomService.isRoomCreator(roomId, username);
-//            return ResponseEntity.ok(Map.of("isCreator", isCreator));
-//        }
 
     // Get messages of the room
     @GetMapping("/{roomId}/messages")
