@@ -138,304 +138,154 @@ export const Chatpage = () => {
   }, [messages]);
 
   return (
-//     <div
-//       className="flex flex-col justify-center items-center fixed w-full h-full bg-gray-100 dark:bg-gray-500"
-//       style={{
-//         backgroundImage: 'url(image.png)',
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'cover',
-//         backgroundPositionX: '-300%',
-//       }}
-//     >
-//       {/* /* Header container */}
-//       <header
-//         className="flex justify-between items-center mt-0.5 bg-gradient-to-r from-purple-500 to-pink-500 shadow-md p-4 border-b w-full"
-//         style={{
-//           boxShadow: '0 0 20px rgba(128, 90, 213, 0.5)',
-//           borderRadius: '0 0 10px 10px',
-//           backgroundImage: 'url(image.png)',
-//           backgroundSize: 'cover',
-//         }}
-//       >
-//         <div className="flex items-center">
-//           <h1 className="text-lg font-semibold text-white">
-//             Room Name:{' '}
-//             <span className="font-normal text-gray-200">{roomId}</span>
-//           </h1>
-//         </div>
-//         <div className="flex items-center">
-//           <h1 className="text-lg font-semibold text-white">
-//             User Name:{' '}
-//             <span className="font-normal text-gray-200">{currentUser}</span>
-//           </h1>
-//         </div>        <div className="flex gap-4">
-//           <button
-//             onClick={handleLeaveRoom}
-//             className="px-4 py-2 bg-white text-orange-500 font-medium rounded border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-200"
-//           >
-//             Leave Room
-//           </button>
+    <div
+      className="flex flex-col justify-center items-center fixed w-full h-full bg-gray-100 dark:bg-gray-500"
+      style={{
+        backgroundImage: 'url(image.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'cover',
+        backgroundPositionX: '-300%',
+      }}
+    >
+      {/* /* Header container */}
+      <header
+        className="flex justify-between items-center mt-0.5 bg-gradient-to-r from-purple-500 to-pink-500 shadow-md p-4 border-b w-full"
+        style={{
+          boxShadow: '0 0 20px rgba(128, 90, 213, 0.5)',
+          borderRadius: '0 0 10px 10px',
+          backgroundImage: 'url(image.png)',
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="flex items-center">
+          <h1 className="text-lg font-semibold text-white">
+            Room Name:{' '}
+            <span className="font-normal text-gray-200">{roomId}</span>
+          </h1>
+        </div>
+        <div className="flex items-center">
+          <h1 className="text-lg font-semibold text-white">
+            User Name:{' '}
+            <span className="font-normal text-gray-200">{currentUser}</span>
+          </h1>
+        </div>        <div className="flex gap-4">
+          <button
+            onClick={handleLeaveRoom}
+            className="px-4 py-2 bg-white text-orange-500 font-medium rounded border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-200"
+          >
+            Leave Room
+          </button>
 
-//           {currentUser===isCreator && (
-//             <button
-//               onClick={handleCloseRoom}
-//               className="px-4 py-2 bg-white text-red-500 font-medium rounded border border-red-500 hover:bg-red-500 hover:text-white transition duration-200"
-//             >
-//               Close Room
-//             </button>
-//           )}
-//         </div>
-//       </header>
+          {currentUser===isCreator && (
+            <button
+              onClick={handleCloseRoom}
+              className="px-4 py-2 bg-white text-red-500 font-medium rounded border border-red-500 hover:bg-red-500 hover:text-white transition duration-200"
+            >
+              Close Room
+            </button>
+          )}
+        </div>
+      </header>
 
-//       {/* Main chat container */}
-//       <main
-//         className="py-20 border w-2/3 dark:bg-blue-950 space-y-2 h-[calc(106vh-120px)] mx-auto overflow-y-auto overflow-x-hidden"
-//         style={{ backgroundImage: 'url(robu-4-bg.png)', backgroundSize: 'cover' }}
-//         ref={ChatboxRef}
-//       >
-//         {messages.map((message, index) => (
-//           <div
-//             key={index}
-//             className={`flex ${
-//               message.sender === currentUser ? 'justify-end' : 'justify-start'
-//             }`}
-//           >
-//             <div
-//               className={`p-1 mb-2 ${
-//                 message.sender === currentUser
-//                   ? 'dark:bg-green-600 self-end'
-//                   : 'dark:bg-blue-600 self-start'
-//               } max-w-xs rounded break-words`}
-//               style={{ margin: '0 10px', wordBreak: 'break-word' }}
-//             >
-//               <div className="flex flex-row gap-2">
-//                 <img
-//                   src="robu-3.png"
-//                   alt="User Avatar"
-//                   className="w-8 h-8 rounded-full mr-2 mb-1"
-//                 ></img>
-//                 <div className="flex flex-col">
-//                   <p className="text-sm font-bold text-white mb-1">
-//                     {message.sender}
-//                   </p>
-//                   <p className="text-white">{message.content}</p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </main>
-
-//       {/* Chat messages send container */}
-//       <div
-//         className="border fixed bottom-1 h-auto mb-[-0.2%] rounded px-10 w-250 mr-[-0.1%] ml-[-1.1%] bg-white shadow-md flex items-center justify-between p-2 mx-auto"
-//         style={{
-//           backgroundImage: 'url(robu-4-bg.png)',
-//           backgroundSize: 'cover',
-//           boxShadow: '0 0 20px rgba(128, 90, 213, 0.5)',
-//           borderRadius: '10px',
-//           maxHeight: '30vh',
-//           overflowY: 'auto',
-//         }}
-//       >
-//         <textarea
-//           value={input}
-//           onChange={(e) => {
-//             setInput(e.target.value);
-//             e.target.style.height = 'auto';
-//             e.target.style.height = `${e.target.scrollHeight}px`;
-//           }}
-//           onKeyDown={(e) => {
-//             if (e.key === 'Enter' && !e.shiftKey) {
-//               e.preventDefault();
-//               sendMessage();
-//               e.target.style.height = 'auto';
-//             }
-//           }}
-//           type="text"
-//           className="w-full border border-gray-300 rounded px-5 text-gray-700 placeholder-gray-400 resize-none overflow-hidden"
-//           placeholder="Type your message here..."
-//           style={{
-//             background: 'rgba(255, 255, 255, 0.8)',
-//             border: '2px solid white',
-//             overflowY: 'hidden',
-//             paddingBottom: '0.1rem',
-//           }}
-//           onFocus={(e) => {
-//             e.target.style.boxShadow = '0 0 20px rgba(190, 90, 255, 0.9)';
-//             e.target.style.borderColor = '#fff';
-//           }}
-//           onBlur={(e) => {
-//             e.target.style.boxShadow = 'none';
-//             e.target.style.borderColor = '#fff';
-//           }}
-//         />
-//         <div className="flex ml-2">
-//           <button
-//             className="bg-green-500 text-white font-medium rounded px-4 py-2 border-green-800 hover:bg-green-800 hover:text-white transition duration-200"
-//             onClick={sendMessage}
-//           >
-//             <Send className="mr-2" />
-//           </button>          <button 
-//             onClick={() => toast.success("This Feature Coming Soon !!")}
-//             className="bg-purple-500 text-white font-medium rounded px-4 py-2 ml-2 border-purple-800 hover:bg-purple-800 transition duration-200 flex items-center"
-//           >
-//             <Paperclip className="mr-2" />
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
- <div className="chat-container">
-      <div className="chat-header">
-        <h1>Chat Room</h1>
-      </div>
-      <div className="chat-messages">
+      {/* Main chat container */}
+      <main
+        className="py-20 border w-2/3 dark:bg-blue-950 space-y-2 h-[calc(106vh-120px)] mx-auto overflow-y-auto overflow-x-hidden"
+        style={{ backgroundImage: 'url(robu-4-bg.png)', backgroundSize: 'cover' }}
+        ref={ChatboxRef}
+      >
         {messages.map((message, index) => (
-          <div key={index} className="message">
-            <span className="username">{message.sender}</span>
-            <span className="message-text">{message.content}</span>
+          <div
+            key={index}
+            className={`flex ${
+              message.sender === currentUser ? 'justify-end' : 'justify-start'
+            }`}
+          >
+            <div
+              className={`p-1 mb-2 ${
+                message.sender === currentUser
+                  ? 'dark:bg-green-600 self-end'
+                  : 'dark:bg-blue-600 self-start'
+              } max-w-xs rounded break-words`}
+              style={{ margin: '0 10px', wordBreak: 'break-word' }}
+            >
+              <div className="flex flex-row gap-2">
+                <img
+                  src="robu-3.png"
+                  alt="User Avatar"
+                  className="w-8 h-8 rounded-full mr-2 mb-1"
+                ></img>
+                <div className="flex flex-col">
+                  <p className="text-sm font-bold text-white mb-1">
+                    {message.sender}
+                  </p>
+                  <p className="text-white">{message.content}</p>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
-      </div>
-      <div className="chat-input">
-        <input
-          type="text"
+      </main>
+
+      {/* Chat messages send container */}
+      <div
+        className="border fixed bottom-1 h-auto mb-[-0.2%] rounded px-10 w-250 mr-[-0.1%] ml-[-1.1%] bg-white shadow-md flex items-center justify-between p-2 mx-auto"
+        style={{
+          backgroundImage: 'url(robu-4-bg.png)',
+          backgroundSize: 'cover',
+          boxShadow: '0 0 20px rgba(128, 90, 213, 0.5)',
+          borderRadius: '10px',
+          maxHeight: '30vh',
+          overflowY: 'auto',
+        }}
+      >
+        <textarea
           value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type a message..."
-          className="input-field"
+          onChange={(e) => {
+            setInput(e.target.value);
+            e.target.style.height = 'auto';
+            e.target.style.height = `${e.target.scrollHeight}px`;
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              sendMessage();
+              e.target.style.height = 'auto';
+            }
+          }}
+          type="text"
+          className="w-full border border-gray-300 rounded px-5 text-gray-700 placeholder-gray-400 resize-none overflow-hidden"
+          placeholder="Type your message here..."
+          style={{
+            background: 'rgba(255, 255, 255, 0.8)',
+            border: '2px solid white',
+            overflowY: 'hidden',
+            paddingBottom: '0.1rem',
+          }}
+          onFocus={(e) => {
+            e.target.style.boxShadow = '0 0 20px rgba(190, 90, 255, 0.9)';
+            e.target.style.borderColor = '#fff';
+          }}
+          onBlur={(e) => {
+            e.target.style.boxShadow = 'none';
+            e.target.style.borderColor = '#fff';
+          }}
         />
-        <button className="send-button" onClick={sendMessage}>
-          <Send />
-        </button>
+        <div className="flex ml-2">
+          <button
+            className="bg-green-500 text-white font-medium rounded px-4 py-2 border-green-800 hover:bg-green-800 hover:text-white transition duration-200"
+            onClick={sendMessage}
+          >
+            <Send className="mr-2" />
+          </button>          <button 
+            onClick={() => toast.success("This Feature Coming Soon !!")}
+            className="bg-purple-500 text-white font-medium rounded px-4 py-2 ml-2 border-purple-800 hover:bg-purple-800 transition duration-200 flex items-center"
+          >
+            <Paperclip className="mr-2" />
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-// Add CSS media queries to adjust layout for smaller screen sizes
-const styles = {
-  chatContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '20px',
-    backgroundColor: '#f7f7f7',
-    borderRadius: '10px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-  },
-  chatHeader: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    marginBottom: '10px',
-  },
-  chatMessages: {
-    flex: 1,
-    overflowY: 'auto',
-    padding: '10px',
-  },
-  message: {
-    padding: '10px',
-    borderBottom: '1px solid #ccc',
-  },
-  username: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    marginRight: '10px',
-  },
-  messageText: {
-    fontSize: '16px',
-  },
-  chatInput: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '10px',
-  },
-  inputField: {
-    flex: 1,
-    padding: '10px',
-    fontSize: '16px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-  },
-  sendButton: {
-    marginLeft: '10px',
-    padding: '10px',
-    fontSize: '16px',
-    backgroundColor: '#4CAF50',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
-};
-
-const mobileStyles = {
-  chatContainer: {
-    padding: '10px',
-  },
-  chatHeader: {
-    fontSize: '18px',
-  },
-  chatMessages: {
-    padding: '5px',
-  },
-  message: {
-    padding: '5px',
-  },
-  username: {
-    fontSize: '14px',
-  },
-  messageText: {
-    fontSize: '14px',
-  },
-  chatInput: {
-    padding: '5px',
-  },
-  inputField: {
-    padding: '5px',
-    fontSize: '14px',
-  },
-  sendButton: {
-    padding: '5px',
-    fontSize: '14px',
-  },
-};
-
-const tabletStyles = {
-  chatContainer: {
-    padding: '15px',
-  },
-  chatHeader: {
-    fontSize: '20px',
-  },
-  chatMessages: {
-    padding: '10px',
-  },
-  message: {
-    padding: '10px',
-  },
-  username: {
-    fontSize: '16px',
-  },
-  messageText: {
-    fontSize: '16px',
-  },
-  chatInput: {
-    padding: '10px',
-  },
-  inputField: {
-    padding: '10px',
-    fontSize: '16px',
-  },
-  sendButton: {
-    padding: '10px',
-    fontSize: '16px',
-  },
-};
-
-// Use CSS media queries to apply different styles based on screen size
 export default Chatpage;
