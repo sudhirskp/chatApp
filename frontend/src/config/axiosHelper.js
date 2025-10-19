@@ -9,6 +9,3 @@ export const HttpClient = axios.create({
 });
 
 export default HttpClient;
-
-
-//mongodb+srv://sudhirjigta_db_user:VGEyigR9DE3baCdK@chatapp.1q6udew.mongodb.net/chatapp?retryWrites=true&w=majority
