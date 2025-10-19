@@ -1,6 +1,6 @@
 import axios from 'axios';
 // export const baseURL = "http://localhost:8080";
-export const baseURL = "https://chatback-latest-4xc1.onrender.com";
+export const baseURL = "https://chatback-v1-1.onrender.com/";
 export const HttpClient = axios.create({
     baseURL: baseURL,
     headers: {
@@ -9,3 +9,6 @@ export const HttpClient = axios.create({
 });
 
 export default HttpClient;
+
+
+//mongodb+srv://sudhirjigta_db_user:VGEyigR9DE3baCdK@chatapp.1q6udew.mongodb.net/chatapp?retryWrites=true&w=majority
