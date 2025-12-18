@@ -13,6 +13,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOriginPatterns("https://courageous-cheesecake-916884.netlify.app")
+                .allowedOrigins(
+                        "https://your-chat-app.netlify.app",
+                        "https://skproom.me"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
