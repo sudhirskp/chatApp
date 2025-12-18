@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOriginPatterns("https://courageous-cheesecake-916884.netlify.app")
                 .allowedOrigins(
-                        "https://your-chat-app.netlify.app",
+                        "https://courageous-cheesecake-916884.app",
                         "https://skproom.me"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
