@@ -78,34 +78,30 @@ const navigate = useNavigate();
 
     return (
       
-      <div
-      className="relative isolate min-h-screen flex items-center justify-center px-4 py-8 sm:px-6 lg:px-10 overflow-hidden bg-gray-100 dark:bg-gray-800"
-        style={{
-          backgroundImage: "url('robu-4-icon.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
+        <div
+        className="min-h-screen flex items-center justify-center px-4 py-8 sm:px-6 lg:px-10 bg-gray-100 dark:bg-gray-800"
+            style={{
+                backgroundImage: "url('robu-4-icon.png')",
+                //background: "linear-gradient(135deg, rgb(63, 94, 251), rgb(252, 70, 107))",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
             
            
-      >
-        <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/10 via-black/0 to-black/25"
-        />
-          
-        <div
-          className="relative z-10 w-full max-w-[560px] p-5 sm:p-8 rounded-2xl shadow-2xl bg-[rgba(57,32,110,0.92)] border border-white/20 hover:border-purple-300 dark:hover:border-pink-300"
-          style={{
-            backgroundImage: "url('image.png') ",
-            backgroundSize: "cover",
-          backgroundPosition: "center",
-            backgroundBlendMode: "overlay",
-            boxShadow: "0 0 30px rgba(128, 90, 213, 0.7), 0 0 60px rgba(99, 102, 241, 0.5)",
-            borderRadius: "20px",
-          }}
-                
         >
+          
+            <div
+              className="w-full max-w-[560px] p-5 sm:p-8 rounded-2xl shadow-2xl bg-gray-100 dark:bg-gray-800 hover:border-4 hover:border-purple-300 hover:brightness-110 dark:hover:border-pink-300"
+                style={{
+                    backgroundImage: "url('image.png') ",
+                    backgroundSize: "cover",
+                backgroundPosition: "center",
+                    //background:'transparent',
+                    boxShadow: "0 0 30px rgba(128, 90, 213, 0.7), 0 0 60px rgba(99, 102, 241, 0.5)",
+                    borderRadius: "20px",
+                }}
+                
+            >
 
                 <h1 className="text-2xl col-auto text-gray-900 dark:text-gray-100 font-extrabold text-left">
                     <b>Join Or Create the Room</b>
