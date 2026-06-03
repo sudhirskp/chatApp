@@ -79,7 +79,7 @@ const navigate = useNavigate();
     return (
       
         <div
-            className="min-h-screen flex items-center justify-start bg-gray-100 dark:bg-gray-800"
+        className="min-h-screen flex items-center justify-center px-4 py-8 sm:px-6 lg:px-10 bg-gray-100 dark:bg-gray-800"
             style={{
                 backgroundImage: "url('robu-4-icon.png')",
                 //background: "linear-gradient(135deg, rgb(63, 94, 251), rgb(252, 70, 107))",
@@ -91,13 +91,11 @@ const navigate = useNavigate();
         >
           
             <div
-                className="p-8 col-auto w-auto max-w-2xl rounded-lg shadow-2xl bg-gray-100 dark:bg-gray-800 hover:border-4 hover:border-purple-300 hover:brightness-110 dark:hover:border-pink-300"
+              className="w-full max-w-[560px] p-5 sm:p-8 rounded-2xl shadow-2xl bg-gray-100 dark:bg-gray-800 hover:border-4 hover:border-purple-300 hover:brightness-110 dark:hover:border-pink-300"
                 style={{
                     backgroundImage: "url('image.png') ",
-                    width:"500px",
                     backgroundSize: "cover",
-                    backgroundPosition: "right",
-                    marginLeft: '10%',
+                backgroundPosition: "center",
                     //background:'transparent',
                     boxShadow: "0 0 30px rgba(128, 90, 213, 0.7), 0 0 60px rgba(99, 102, 241, 0.5)",
                     borderRadius: "20px",
@@ -179,7 +177,7 @@ const navigate = useNavigate();
 
 
                     {
-                    <div className="flex space-x-6">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     <button onClick={joinChat}
                       style={{
                         background: "transparent",
