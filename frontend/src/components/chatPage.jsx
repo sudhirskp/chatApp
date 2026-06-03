@@ -139,16 +139,17 @@ export const Chatpage = () => {
 
   return (
     <div
-      className="flex min-h-screen flex-col items-stretch bg-gray-100 dark:bg-gray-500 overflow-hidden"
+      className="flex flex-col justify-center items-center fixed w-full h-full bg-gray-100 dark:bg-gray-500"
       style={{
         backgroundImage: 'url(image.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'cover',
+        backgroundPositionX: '-300%',
       }}
     >
       {/* /* Header container */}
       <header
-        className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center bg-gradient-to-r from-purple-500 to-pink-500 shadow-md px-4 py-3 sm:px-6 border-b w-full"
+        className="flex justify-between items-center mt-0.5 bg-gradient-to-r from-purple-500 to-pink-500 shadow-md p-4 border-b w-full"
         style={{
           boxShadow: '0 0 20px rgba(128, 90, 213, 0.5)',
           borderRadius: '0 0 10px 10px',
@@ -157,21 +158,20 @@ export const Chatpage = () => {
         }}
       >
         <div className="flex items-center">
-          <h1 className="text-sm sm:text-base lg:text-lg font-semibold text-white break-all">
+          <h1 className="text-lg font-semibold text-white">
             Room Name:{' '}
             <span className="font-normal text-gray-200">{roomId}</span>
           </h1>
         </div>
         <div className="flex items-center">
-          <h1 className="text-sm sm:text-base lg:text-lg font-semibold text-white break-all">
+          <h1 className="text-lg font-semibold text-white">
             User Name:{' '}
             <span className="font-normal text-gray-200">{currentUser}</span>
           </h1>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+        </div>        <div className="flex gap-4">
           <button
             onClick={handleLeaveRoom}
-            className="w-full sm:w-auto px-4 py-2 bg-white text-orange-500 font-medium rounded border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-200"
+            className="px-4 py-2 bg-white text-orange-500 font-medium rounded border border-orange-500 hover:bg-orange-500 hover:text-white transition duration-200"
           >
             Leave Room
           </button>
@@ -179,7 +179,7 @@ export const Chatpage = () => {
           {currentUser===isCreator && (
             <button
               onClick={handleCloseRoom}
-              className="w-full sm:w-auto px-4 py-2 bg-white text-red-500 font-medium rounded border border-red-500 hover:bg-red-500 hover:text-white transition duration-200"
+              className="px-4 py-2 bg-white text-red-500 font-medium rounded border border-red-500 hover:bg-red-500 hover:text-white transition duration-200"
             >
               Close Room
             </button>
@@ -189,8 +189,8 @@ export const Chatpage = () => {
 
       {/* Main chat container */}
       <main
-        className="flex-1 w-full max-w-6xl mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 border-t-0 dark:bg-blue-950 space-y-2 overflow-y-auto overflow-x-hidden"
-        style={{ backgroundImage: 'url(robu-4-bg.png)', backgroundSize: 'cover', minHeight: 0 }}
+        className="py-20 border w-2/3 dark:bg-blue-950 space-y-2 h-[calc(106vh-120px)] mx-auto overflow-y-auto overflow-x-hidden"
+        style={{ backgroundImage: 'url(robu-4-bg.png)', backgroundSize: 'cover' }}
         ref={ChatboxRef}
       >
         {messages.map((message, index) => (
@@ -205,22 +205,20 @@ export const Chatpage = () => {
                 message.sender === currentUser
                   ? 'dark:bg-green-600 self-end'
                   : 'dark:bg-blue-600 self-start'
-              } max-w-[85%] sm:max-w-xs rounded break-words`}
+              } max-w-xs rounded break-words`}
               style={{ margin: '0 10px', wordBreak: 'break-word' }}
             >
               <div className="flex flex-row gap-2">
                 <img
                   src="robu-3.png"
                   alt="User Avatar"
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full mr-2 mb-1"
+                  className="w-8 h-8 rounded-full mr-2 mb-1"
                 ></img>
                 <div className="flex flex-col">
-                  <p className="text-xs sm:text-sm font-bold text-white mb-1 break-all">
+                  <p className="text-sm font-bold text-white mb-1">
                     {message.sender}
                   </p>
-                  <p className="text-sm sm:text-base text-white break-words whitespace-pre-wrap">
-                    {message.content}
-                  </p>
+                  <p className="text-white">{message.content}</p>
                 </div>
               </div>
             </div>
@@ -230,7 +228,7 @@ export const Chatpage = () => {
 
       {/* Chat messages send container */}
       <div
-        className="w-full max-w-6xl mx-auto border rounded-t-2xl bg-white shadow-md flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-end px-3 sm:px-4 py-3"
+        className="border fixed bottom-1 h-auto mb-[-0.2%] rounded px-10 w-250 mr-[-0.1%] ml-[-1.1%] bg-white shadow-md flex items-center justify-between p-2 mx-auto"
         style={{
           backgroundImage: 'url(robu-4-bg.png)',
           backgroundSize: 'cover',
@@ -255,7 +253,7 @@ export const Chatpage = () => {
             }
           }}
           type="text"
-          className="w-full min-h-12 border border-gray-300 rounded px-4 py-3 text-gray-700 placeholder-gray-400 resize-none overflow-hidden"
+          className="w-full border border-gray-300 rounded px-5 text-gray-700 placeholder-gray-400 resize-none overflow-hidden"
           placeholder="Type your message here..."
           style={{
             background: 'rgba(255, 255, 255, 0.8)',
@@ -272,15 +270,15 @@ export const Chatpage = () => {
             e.target.style.borderColor = '#fff';
           }}
         />
-        <div className="flex w-full sm:w-auto gap-2 sm:ml-2">
+        <div className="flex ml-2">
           <button
-            className="flex-1 sm:flex-none bg-green-500 text-white font-medium rounded px-4 py-2 border-green-800 hover:bg-green-800 hover:text-white transition duration-200 flex items-center justify-center"
+            className="bg-green-500 text-white font-medium rounded px-4 py-2 border-green-800 hover:bg-green-800 hover:text-white transition duration-200"
             onClick={sendMessage}
           >
             <Send className="mr-2" />
           </button>          <button 
             onClick={() => toast.success("This Feature Coming Soon !!")}
-            className="flex-1 sm:flex-none bg-purple-500 text-white font-medium rounded px-4 py-2 border-purple-800 hover:bg-purple-800 transition duration-200 flex items-center justify-center"
+            className="bg-purple-500 text-white font-medium rounded px-4 py-2 ml-2 border-purple-800 hover:bg-purple-800 transition duration-200 flex items-center"
           >
             <Paperclip className="mr-2" />
           </button>
